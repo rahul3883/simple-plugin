@@ -1,0 +1,7 @@
+#weather_dashboard_widget p span {
+	font-weight: 500;
+}
+
+#weather_dashboard_widget p label {
+	color: #72777c;
+}
