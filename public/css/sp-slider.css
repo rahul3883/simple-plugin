@@ -176,6 +176,11 @@
     padding-bottom: 5.938rem;
 }
 
+.fancybox-inner #sp-testimonials-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 #sp-slider-all-container {
     position: relative;
 	margin: 50px 0;
