@@ -112,13 +112,6 @@ class Simple_Plugin_Public {
 
 			wp_register_script( 'simple-plugin-slider-script', plugin_dir_url( __FILE__ ) . 'js/simple-plugin-slider.js', array( 'jquery' ), $this->version, true );
 
-			$ajax_main_slider_url = add_query_arg(
-				array(
-					'action' => 'get_main_slider_content',
-				),
-				admin_url( 'admin-ajax.php' )
-			);
-
 			$ajax_testimonials_url = add_query_arg(
 				array(
 					'action' => 'get_testimonials_content',
@@ -135,7 +128,6 @@ class Simple_Plugin_Public {
 
 			wp_localize_script( 'simple-plugin-slider-script', 'main_slider', array( 'ajax_url' => esc_url( $ajax_main_slider_url ) ) );
 			wp_localize_script( 'simple-plugin-slider-script', 'testimonials_slider', array( 'ajax_url' => esc_url( $ajax_testimonials_url ) ) );
-			wp_localize_script( 'simple-plugin-slider-script', 'sliders_count', array( 'ajax_url' => esc_url( $ajax_sliders_count_url ) ) );
 			wp_enqueue_script( 'simple-plugin-slider-script' );
 
 		}
