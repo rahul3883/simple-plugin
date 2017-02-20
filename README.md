@@ -1,1 +1,1 @@
-#Simple Plugin
+#Simple
