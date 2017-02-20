@@ -199,7 +199,6 @@ class Simple_Plugin {
 
 		//add actions for getting slider markup
 		$custom_functions->add_action_slider();
-		$custom_functions->set_global_variables();
 
 	}
 
