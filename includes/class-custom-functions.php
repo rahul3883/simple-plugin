@@ -3,31 +3,10 @@
 class Custom_Functions {
 
 	function __construct() {
-		$this->get_weather_data();
-	}
 
-	public function set_global_variables() {
-
-		$default_count = 0;
-		$prefix = 'fb_';
-		$GLOBALS['sliders_count'] = array(
-			$prefix . 'sp_slider_all'		=> $default_count,
-			$prefix . 'sp_slider'			=> $default_count,
-			$prefix . 'sp_testimonials'		=> $default_count,
-		);
-
-	}
-
-	public function get_sliders_count() {
-		global $sliders_count;
-		echo json_encode( $sliders_count );
-		die();
 	}
 
 	public function add_action_slider() {
-
-		add_action( 'wp_ajax_get_sliders_count', array( $this, 'get_sliders_count' ) );
-		add_action( 'wp_ajax_nopriv_get_sliders_count', array( $this, 'get_sliders_count' ) );
 
 		add_action( 'wp_ajax_get_main_slider_content', array( $this, 'get_main_slider_content' ) );
 		add_action( 'wp_ajax_nopriv_get_main_slider_content', array( $this, 'get_main_slider_content' ) );
@@ -49,14 +28,6 @@ class Custom_Functions {
 		include( SIMPLE_PLUGIN_PATH . 'public/partials/sp-testimonials.php' );
 		echo ob_get_clean();
 		die();
-	}
-
-	public function http_custom() {
-
-		wp_cache_set( 'key', 'val', 'grp', exp_tm );
-
-
-
 	}
 
 	public function get_weather_data( $city = 'London' ) {
